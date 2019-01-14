@@ -1,3 +1,4 @@
+#!/usr/bin/python2
 """
 Test for THETA V client mode. Your workstation and the THETA V need to be 
 connected to the same WiFi router.
@@ -17,9 +18,9 @@ from requests.auth import HTTPDigestAuth
 import pprint
 
 # global constants specific to your THETA. Change for your camera.
-THETA_ID = 'THETAYL00101082'
-THETA_PASSWORD = '00101082'  # default password. may have been changed
-THETA_URL = 'http://10.0.0.3:80/osc/'
+THETA_ID = 'THETAYL00105377'
+THETA_PASSWORD = '00105377'  # default password. may have been changed
+THETA_URL = 'http://192.168.2.101/osc/'
 
 
 def get(osc_command):
@@ -54,5 +55,5 @@ def takePicture():
 
 
 get("info")
-post("state")
-takePicture()
+# post("state")
+# takePicture()
