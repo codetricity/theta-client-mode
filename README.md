@@ -18,4 +18,16 @@ To find the IP address of the THETA V:
 
 Run test:
 
-    $ python3 client-mode.py
+    $ python client-mode.py info
+
+or if you are using Linux and your PATH is set to the current directory:
+
+    $ client-mode.py info
+
+Current commands
+    "help",
+    "info",
+    "state",
+    "takePicture",
+    "_listPlugins",
+    "_setPlugin"
