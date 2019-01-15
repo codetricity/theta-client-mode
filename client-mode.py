@@ -17,11 +17,15 @@ import requests
 from requests.auth import HTTPDigestAuth
 import pprint
 import sys
+import shutil
+from PIL import Image
+from io import BytesIO
 
 # global constants specific to your THETA. Change for your camera.
 THETA_ID = 'THETAYL00105377'
 THETA_PASSWORD = '00105377'  # default password. may have been changed
-THETA_URL = 'http://10.42.0.181/osc/'
+THETA_IP = "http://10.42.0.181/"
+THETA_URL = THETA_IP + 'osc/'
 
 # End of user-defined constants
 
@@ -30,7 +34,9 @@ COMMANDS = ["help",
             "state",
             "takePicture",
             "_listPlugins",
-            "_setPlugin"]
+            "_setPlugin",
+            "listFiles",
+            "getImage"]
 
 
 def get(osc_command):
@@ -62,6 +68,10 @@ def runCommand(commandArg):
         cameraCommand("takePicture")
     elif commandArg == "_listPlugins":
         cameraCommand("_listPlugins")
+    elif commandArg == "listFiles":
+        listFiles()
+    elif commandArg == "getImage":
+        getImage()
 
 
 def main():
@@ -84,6 +94,43 @@ def main():
 
     else:
         helper()
+
+
+def getImage():
+    with open('pic1.jpg', 'wb') as handle:
+        url = "http://10.42.0.181/files/150100525831424d42079d18e0b6c300/100RICOH/R0010194.JPG"
+        response = requests.get(
+                    url,
+                    stream=True,
+                    auth=(HTTPDigestAuth(THETA_ID, THETA_PASSWORD)))
+
+        if not response.ok:
+            print(response)
+        for block in response.iter_content(1024):
+            if not block:
+                break
+            handle.write(block)
+
+
+def listFiles():
+    url = THETA_URL + 'commands/execute'
+    commandString = "camera.listFiles"
+    payload = {
+                "name": commandString,
+                "parameters": {
+                    "fileType": "image",
+                    "entryCount": 10,
+                    "maxThumbSize": 640
+
+                }}
+    req = requests.post(url,
+                        json=payload,
+                        auth=(HTTPDigestAuth(THETA_ID, THETA_PASSWORD)))
+
+    response = req.json()
+    print(60 * "=")
+    print("client mode listFiles - Testing RICOH THETA API v2.1\n")
+    pprint.pprint(response)
 
 
 def cameraCommand(name):
