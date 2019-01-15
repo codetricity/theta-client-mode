@@ -17,15 +17,16 @@ import requests
 from requests.auth import HTTPDigestAuth
 import pprint
 import sys
-import shutil
-from PIL import Image
-from io import BytesIO
+
 
 # global constants specific to your THETA. Change for your camera.
 THETA_ID = 'THETAYL00105377'
 THETA_PASSWORD = '00105377'  # default password. may have been changed
 THETA_IP = "http://10.42.0.181/"
 THETA_URL = THETA_IP + 'osc/'
+
+# this url for testing
+imageUrl = "http://10.42.0.181/files/150100525831424d42079d18e0b6c300/100RICOH/R0010194.JPG"
 
 # End of user-defined constants
 
@@ -71,7 +72,7 @@ def runCommand(commandArg):
     elif commandArg == "listFiles":
         listFiles()
     elif commandArg == "getImage":
-        getImage()
+        getImage(imageUrl)
 
 
 def main():
@@ -96,9 +97,10 @@ def main():
         helper()
 
 
-def getImage():
-    with open('sampleImg/pic1.jpg', 'wb') as handle:
-        url = "http://10.42.0.181/files/150100525831424d42079d18e0b6c300/100RICOH/R0010194.JPG"
+def getImage(url):
+    imageName = url.split("/")[6]
+    print("saving " + imageName + " to file")
+    with open('sampleImg/' + imageName, 'wb') as handle:
         response = requests.get(
                     url,
                     stream=True,

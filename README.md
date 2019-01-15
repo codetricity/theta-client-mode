@@ -25,9 +25,11 @@ or if you are using Linux and your PATH is set to the current directory:
     $ client-mode.py info
 
 Current commands
-    "help",
-    "info",
-    "state",
-    "takePicture",
-    "_listPlugins",
+    "help"
+    "info"
+    "state"
+    "takePicture"
+    "_listPlugins"
     "_setPlugin"
+    "listFiles"
+    "getImage"
