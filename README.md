@@ -24,12 +24,20 @@ or if you are using Linux and your PATH is set to the current directory:
 
     $ client-mode.py info
 
-Current commands
-    "help"
-    "info"
-    "state"
-    "takePicture"
-    "_listPlugins"
-    "_setPlugin"
-    "listFiles"
-    "getImage"
+### Current commands
+
+* help
+* info
+* state
+* takePicture - take a single picture
+* _listPlugins - list installed plug-ins
+* _setPlugin - set active plug-in to boot. Requires package name on command line
+* listFiles - print last 10 files, including metadata
+* imageUrls - print last 20 image file URLs
+* getImage - download image and save to file. Requires URL on command line
+* imageUrls - print last 20 image URLs
+
+### Testing Commands
+
+* downloadTester - download last 20 images
+* takePictureTester - take 10 images
