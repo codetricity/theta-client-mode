@@ -23,7 +23,14 @@ THETA_ID = 'THETAYL00105377'
 THETA_PASSWORD = '00105377'  # default password. may have been changed
 THETA_URL = 'http://192.168.2.100/osc/'
 
-COMMANDS = ["info", "state", "takePicture"]
+# End of user-defined constants
+
+COMMANDS = ["help",
+            "info",
+            "state",
+            "takePicture",
+            "_listPlugins",
+            "_setPlugin"]
 
 
 def get(osc_command):
@@ -53,15 +60,28 @@ def runCommand(commandArg):
         post("state")
     elif commandArg == "takePicture":
         cameraCommand("takePicture")
+    elif commandArg == "_listPlugins":
+        cameraCommand("_listPlugins")
 
 
 def main():
     if len(sys.argv) == 2:
         commandArg = sys.argv[1]
         if commandArg in COMMANDS:
+            if commandArg == "help":
+                helper()
+            elif commandArg == "_setPlugin":
+                print("include package name of plug-in to boot")
+                print("Example: client-mode.py _setPlugin " +
+                      "guide.theta360.long4kvideo")
             runCommand(commandArg)
         else:
             helper()
+    elif len(sys.argv) == 3:
+        commandArg = sys.argv[1]
+        if commandArg == "_setPlugin":
+            setPlugin(sys.argv[2])
+
     else:
         helper()
     # print(str(sys.argv))
@@ -73,17 +93,17 @@ def main():
 #     print(resp)
 
 
-def takePicture():
-    url = THETA_URL + 'commands/execute'
-    payload = {"name": "camera.takePicture"}
-    req = requests.post(url,
-                        json=payload,
-                        auth=(HTTPDigestAuth(THETA_ID, THETA_PASSWORD)))
+# def takePicture():
+#     url = THETA_URL + 'commands/execute'
+#     payload = {"name": "camera.takePicture"}
+#     req = requests.post(url,
+#                         json=payload,
+#                         auth=(HTTPDigestAuth(THETA_ID, THETA_PASSWORD)))
 
-    response = req.json()
-    print(60 * "=")
-    print("client mode takePicture - Testing RICOH THETA API v2.1\n")
-    pprint.pprint(response)
+#     response = req.json()
+#     print(60 * "=")
+#     print("client mode takePicture - Testing RICOH THETA API v2.1\n")
+#     pprint.pprint(response)
 
 
 def cameraCommand(name):
@@ -99,6 +119,25 @@ def cameraCommand(name):
     print("client mode " + name + " - Testing RICOH THETA API v2.1\n")
     pprint.pprint(response)
 
+
+def setPlugin(packageName):
+    url = THETA_URL + 'commands/execute'
+    commandString = "camera._setPlugin"
+    payload = {
+        "name": commandString,
+        "parameters": {
+            "packageName": packageName,
+            "boot": True
+        }}
+    req = requests.post(url,
+                        json=payload,
+                        auth=(HTTPDigestAuth(THETA_ID, THETA_PASSWORD)))
+
+    response = req.json()
+    print(60 * "=")
+    print("client mode _setPlugin - Testing RICOH THETA API v2.1\n")
+    pprint.pprint(response)
+    
 
 main()
 # get("info")
