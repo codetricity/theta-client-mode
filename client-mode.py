@@ -21,7 +21,7 @@ import sys
 # global constants specific to your THETA. Change for your camera.
 THETA_ID = 'THETAYL00105377'
 THETA_PASSWORD = '00105377'  # default password. may have been changed
-THETA_URL = 'http://192.168.2.100/osc/'
+THETA_URL = 'http://10.42.0.181/osc/'
 
 # End of user-defined constants
 
