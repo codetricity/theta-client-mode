@@ -97,7 +97,7 @@ def main():
 
 
 def getImage():
-    with open('pic1.jpg', 'wb') as handle:
+    with open('sampleImg/pic1.jpg', 'wb') as handle:
         url = "http://10.42.0.181/files/150100525831424d42079d18e0b6c300/100RICOH/R0010194.JPG"
         response = requests.get(
                     url,
