@@ -84,26 +84,6 @@ def main():
 
     else:
         helper()
-    # print(str(sys.argv))
-
-
-# def post(osc_command):
-#     url = THETA_URL + osc_command
-#     resp = requests.post(url)
-#     print(resp)
-
-
-# def takePicture():
-#     url = THETA_URL + 'commands/execute'
-#     payload = {"name": "camera.takePicture"}
-#     req = requests.post(url,
-#                         json=payload,
-#                         auth=(HTTPDigestAuth(THETA_ID, THETA_PASSWORD)))
-
-#     response = req.json()
-#     print(60 * "=")
-#     print("client mode takePicture - Testing RICOH THETA API v2.1\n")
-#     pprint.pprint(response)
 
 
 def cameraCommand(name):
@@ -137,9 +117,6 @@ def setPlugin(packageName):
     print(60 * "=")
     print("client mode _setPlugin - Testing RICOH THETA API v2.1\n")
     pprint.pprint(response)
-    
+
 
 main()
-# get("info")
-# post("state")
-# takePicture()
