@@ -3,7 +3,9 @@
 Use Digest Authentication.
 
 Your THETA V and your workstation must be connected to the same
-WiFi router.  The THETA V WiFi LED should be solid green, not blue.
+WiFi router. You can also connect your THETA to the Wi-Fi of your
+laptop or workstation if you share the Wi-Fi connection.  
+The THETA V WiFi LED should be solid green, not blue.
 
 ## Find IP Address
 
