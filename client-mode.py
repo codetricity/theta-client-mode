@@ -1,7 +1,9 @@
 #!/usr/bin/python2
 """
 Test for THETA V client mode. Your workstation and the THETA V need to be
-connected to the same WiFi router.
+connected to the same WiFi router or your workstation needs to have two
+network interfaces. You can use one Wi-Fi interface as a shared connection
+and use it to assign the THETA an IP address.
 This test script uses Python modules requests and pprint.
 To install requests and pprint
 
@@ -27,7 +29,8 @@ THETA_IP = "http://10.42.0.181/"
 THETA_URL = THETA_IP + 'osc/'
 
 # this url for testing
-testImageUri = "http://10.42.0.181/files/150100525831424d42079d18e0b6c300/100RICOH/R0010194.JPG"
+testImageUri = "http://10.42.0.181/files/" + \
+    "150100525831424d42079d18e0b6c300/100RICOH/R0010194.JPG"
 
 # End of user-defined constants
 
