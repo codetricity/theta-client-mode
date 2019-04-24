@@ -1,7 +1,7 @@
 #!/usr/bin/python2
 """
 Test for THETA V client mode. Your workstation and the THETA V need to be
-connected to the same WiFi router.
+connected to the same WiFi or Ethernet router.
 This test script uses Python modules requests and pprint.
 To install requests and pprint
   
