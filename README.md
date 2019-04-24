@@ -7,7 +7,13 @@ WiFi router or Ethernet switch/hub. You can also connect your THETA to the Wi-Fi
 laptop or workstation if you share the Wi-Fi connection.  
 The THETA V WiFi LED should be solid green, not blue.  If you are assigning the THETA an IP
 address with DHCP, people have reported success with both the internal router DHCP (such as an
-inexpensive D-Link home router) or a DHCP server running on a Linux server/workstation.
+inexpensive D-Link home router) or a DHCP server running on a Linux server/workstation.  See this
+[thread](https://community.theta360.guide/t/how-to-connect-theta-v-with-ethernet/3298?u=codetricity) for more information on using Ethernet.
+
+Thanks these people for Ethernet testing:
+
+* [Kev091190](https://community.theta360.guide/u/Kev091190) - first person to figure out that THETA V can be powered by USG OTG 'Y' connector. Also contributed extensive performance tests.
+* [nasos333](https://community.theta360.guide/u/nasos333) - successfully tested Linux DHCP server
 
 ## Find IP Address
 
