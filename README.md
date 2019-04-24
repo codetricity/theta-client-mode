@@ -3,9 +3,11 @@
 Use Digest Authentication.
 
 Your THETA V and your workstation must be connected to the same
-WiFi router. You can also connect your THETA to the Wi-Fi of your
+WiFi router or Ethernet switch/hub. You can also connect your THETA to the Wi-Fi of your
 laptop or workstation if you share the Wi-Fi connection.  
-The THETA V WiFi LED should be solid green, not blue.
+The THETA V WiFi LED should be solid green, not blue.  If you are assigning the THETA an IP
+address with DHCP, people have reported success with both the internal router DHCP (such as an
+inexpensive D-Link home router) or a DHCP server running on a Linux server/workstation.
 
 ## Find IP Address
 
