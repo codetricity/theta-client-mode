@@ -51,3 +51,5 @@ or if you are using Linux and your PATH is set to the current directory:
 
 * downloadTester - download last 20 images
 * takePictureTester - take 10 images
+
+![Analytics](https://ga-beacon.appspot.com/UA-73311422-5/client-mode)
