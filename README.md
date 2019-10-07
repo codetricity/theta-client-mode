@@ -1,4 +1,4 @@
-# THETA V Client Mode Tests
+# THETA V and Z1 Client Mode Tests
 
 Use Digest Authentication.
 
@@ -10,16 +10,7 @@ address with DHCP, people have reported success with both the internal router DH
 inexpensive D-Link home router) and a DHCP server running on a Linux server/workstation.  See this
 [thread](https://community.theta360.guide/t/how-to-connect-theta-v-with-ethernet/3298?u=codetricity) for more information on using Ethernet.
 
-Thanks to these people for Ethernet testing:
 
-* [Kev091190](https://community.theta360.guide/u/Kev091190) - first person to figure out that THETA V can be powered by USG OTG 'Y' connector. Also contributed extensive performance tests.
-* [nasos333](https://community.theta360.guide/u/nasos333) - successfully tested Linux DHCP server
-
-## Find IP Address
-
-To find the IP address of the THETA V:
-
-    $ python3 find-theta.py
 
 ## Test Client Mode
 
@@ -51,5 +42,21 @@ or if you are using Linux and your PATH is set to the current directory:
 
 * downloadTester - download last 20 images
 * takePictureTester - take 10 images
+
+
+## Find IP Address
+
+To find the IP address of the THETA V:
+
+    $ python3 find-theta.py
+
+## Thanks
+
+Thanks to these people for Ethernet testing:
+
+* [Kev091190](https://community.theta360.guide/u/Kev091190) - first person to figure out that THETA V can be powered by USG OTG 'Y' connector. Also contributed extensive performance tests.
+* [nasos333](https://community.theta360.guide/u/nasos333) - successfully tested Linux DHCP server
+
+
 
 ![Analytics](https://ga-beacon.appspot.com/UA-73311422-5/client-mode)
