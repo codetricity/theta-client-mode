@@ -23,9 +23,11 @@ import time
 
 
 # global constants specific to your THETA. Change for your camera.
+# THETA_ID = 'THETAYL00126042'
+# THETA_PASSWORD = '00125042'  # default password. may have been changed
 THETA_ID = 'THETAYL00105377'
 THETA_PASSWORD = '00105377'  # default password. may have been changed
-THETA_IP = "http://10.42.0.181/"
+THETA_IP = "http://192.168.2.100/"
 THETA_URL = THETA_IP + 'osc/'
 
 # this url for testing

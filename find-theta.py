@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-""" 
+"""
 Example of browsing for a RICOH THETA V in Client Mode.
 The WiFi LED of the THETA V should be solid green.
 This script is the example Zeroconf script with minor
