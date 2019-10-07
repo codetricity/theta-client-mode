@@ -59,7 +59,7 @@ def setOptions():
                        "exposureProgram": 1,
                        "shutterSpeed": 0.002,
                        "_autoBracket": {
-                           "_bracketNumber": 2,
+                           "_bracketNumber": 3,
                            "_bracketParameters": [
                                {
                                    "aperture": 2.1,
@@ -78,7 +78,16 @@ def setOptions():
                                    "iso": 800,
                                    "shutterSpeed": 0.004,
                                    "whiteBalance": "auto"
-                               }
+                               },
+                               {
+                                   "aperture": 2.1,
+                                   "_colorTemperature": 4000,
+                                   "exposureCompensation": 0,
+                                   "exposureProgram": 1,
+                                   "iso": 1000,
+                                   "shutterSpeed": 0.004,
+                                   "whiteBalance": "auto"
+                               },
                            ],
                        }
 
