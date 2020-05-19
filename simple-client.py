@@ -18,6 +18,8 @@ from requests.auth import HTTPDigestAuth
 import pprint
 
 # global constants specific to your THETA. Change for your camera.
+# THETA_ID = 'THETAYN1010104'
+# THETA_PASSWORD = '1010105'  # default password. may have been changed
 THETA_ID = 'THETAYL00105377'
 THETA_PASSWORD = '00105377'  # default password. may have been changed
 THETA_URL = 'http://192.168.2.101/osc/'

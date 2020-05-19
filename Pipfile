@@ -8,6 +8,9 @@ flake8 = "*"
 
 [packages]
 requests = "*"
+pprint = "*"
+requests-auth = "*"
+zeroconf = "*"
 
 [requires]
 python_version = "3.7"
